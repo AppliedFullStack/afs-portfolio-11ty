@@ -1,0 +1,21 @@
+{
+  "Languages": {
+    "C/C++": 4,
+    "JavaScript": 8,
+    "Python": 6,
+    "HTML": 9,
+    "CSS": 8
+  },
+  "Web": {
+    "Node.js": 6,
+    "React JS": 8,
+    "React Native": 5,
+    "API": 6
+  },
+  "Software": {
+    "UX Design": 7,
+    "Front-End": 8,
+    "Back-End": 7,
+    "Dev Ops": 6
+  }
+}

@@ -1,0 +1,7 @@
+.progress {
+  .progress-bar {
+    height: 1rem;
+    background-color: var(--primary-color);
+    transition: width 0.2s ease-in-out;
+  }
+}

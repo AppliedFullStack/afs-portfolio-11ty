@@ -1,0 +1,31 @@
+---
+page:
+  title: Projects
+  headerTitle: Projects
+  headerSubtitle: Looking forward to working on the next challenge!
+---
+
+<section class="filters" data-target=".projects .project">
+  <a href="#" data-filter="">All</a>
+
+  <%
+    let allFilters = projects.map((project) => project.tags).flat();
+    // Remove duplicates
+    allFilters = allFilters.filter((filter, index) => allFilters.indexOf(filter) === index);
+    for (let filter of allFilters) {
+  %>
+      <a href="#" data-filter="<%- filter %>"><%- filter %></a>
+  <% } %>
+</section>
+
+<section class="projects clearfix">
+  <% for (let project of projects) { %>
+    <article
+      class="project"
+      data-tags="<%- project.tags.join(' ') -%>"
+    >
+      <img src="/images/projects/<%- project.id -%>.jpg" alt="<%- project.title -%>">
+      <h3><%- project.title %></h3>
+    </article>
+  <% } %>
+</section>

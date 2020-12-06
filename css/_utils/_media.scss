@@ -1,0 +1,26 @@
+$_tablet-width: 768px;
+$_desktop-width: 1024px;
+
+@mixin dark-theme {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin phone-only {
+  @media (max-width: $_tablet-width - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $_tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $_desktop-width) {
+    @content;
+  }
+}

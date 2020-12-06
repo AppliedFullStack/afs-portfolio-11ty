@@ -1,0 +1,23 @@
+:root {
+  --primary-color: transparent;
+  --font-color: #666;
+  --font-color-lighter: #aaa;
+  --font-color-stronger: #333;
+  --bg-color: #fff;
+  --box-shadow: 0.3rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  --box-shadow-sm: 0.1rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+  --box-shadow-lg: 0 0 2rem rgba(0, 0, 0, 0.3);
+  --responsive-breakpoint-sm: 576px;
+  --responsive-breakpoint-md: 768px;
+  --responsive-breakpoint-lg: 992px;
+  --responsive-breakpoint-xl: 1200px;
+}
+
+@include dark-theme {
+  :root {
+    --font-color: #d5d5d5;
+    --font-color-lighter: #aaa;
+    --font-color-stronger: #f5f5f5;
+    --bg-color: #222;
+  }
+}

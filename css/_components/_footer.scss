@@ -1,0 +1,9 @@
+footer {
+  text-align: center;
+  color: var(--font-color-lighter);
+  margin-bottom: 3rem;
+
+  @include tablet {
+    color: var(--bg-color);
+  }
+}

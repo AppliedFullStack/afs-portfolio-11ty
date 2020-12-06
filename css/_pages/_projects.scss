@@ -1,0 +1,90 @@
+#page-projects {
+  --grid-gutter: 2.4rem;
+
+  .filters {
+    text-align: right;
+    margin-top: 4rem;
+
+    a {
+      color: var(--font-color-lighter);
+      text-decoration: none;
+      display: inline-block;
+      margin: 2rem 1rem;
+      transition: color 0.2s ease-in-out;
+
+      &.active,
+      &:hover {
+        color: var(--font-color-stronger);
+      }
+    }
+  }
+
+  .projects {
+    margin-top: 2rem;
+
+    @include tablet {
+      margin-right: calc(-1 * var(--grid-gutter));
+    }
+
+    .project {
+      margin-bottom: var(--grid-gutter);
+      position: relative;
+      box-sizing: border-box;
+      border-radius: 0.4rem;
+      overflow: hidden;
+      opacity: 1;
+      transition: width 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      cursor: pointer;
+
+      @include tablet {
+        width: calc(50% - var(--grid-gutter));
+        float: left;
+        margin-right: var(--grid-gutter);
+      }
+
+      @include desktop {
+        width: calc(33% - var(--grid-gutter));
+        float: left;
+        margin-right: var(--grid-gutter);
+      }
+
+      &.hidden {
+        width: 0;
+        margin: 0;
+        opacity: 0;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 56%;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      &:hover img {
+        transform: scale(1.2);
+        filter: brightness(60%);
+      }
+
+      h3 {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        display: inline-block;
+        background-color: var(--font-color-stronger);
+        color: var(--bg-color);
+        font-size: 1.6rem;
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.4rem;
+        margin: 0;
+      }
+    }
+  }
+}

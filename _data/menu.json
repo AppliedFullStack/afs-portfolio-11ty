@@ -1,0 +1,6 @@
+[
+  { "text": "About", "path": "/" },
+  { "text": "Curriculum Vitae", "path": "/cv/" },
+  { "text": "Projects", "path": "/projects/" },
+  { "text": "Contact", "path": "/contact/" }
+]

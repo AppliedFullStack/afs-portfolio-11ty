@@ -1,5 +1,16 @@
+const pluginSass = require("eleventy-plugin-sass");
+
 module.exports = (eleventyConfig) => {
-  eleventyConfig.addPassthroughCopy('assets');
+  eleventyConfig.setDataDeepMerge(true);
+
+  eleventyConfig.addPassthroughCopy('js');
+  eleventyConfig.addPassthroughCopy('images');
+  eleventyConfig.addPlugin(
+    pluginSass,
+    {
+      sourcemaps: true
+    }
+  );
 
   return {
     dir: {
