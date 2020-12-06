@@ -87,4 +87,51 @@
       }
     }
   }
+
+  .modal {
+    h2 {
+      margin: 0;
+      font-size: 4rem;
+      font-weight: normal;
+      color: var(--font-color-stronger);
+    }
+
+    .meta {
+      margin: 0.5rem 0 3rem;
+      font-size: 2rem;
+
+      span {
+        display: inline-block;
+      }
+
+      .organization {
+        color: var(--font-color-stronger);
+      }
+
+      .time {
+        color: var(--font-color-lighter);
+        float: right;
+        font-size: 1.6rem;
+        font-variant: all-small-caps;
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .modal-actions {
+      text-align: right;
+
+      a {
+        display: inline-block;
+
+        &.modal--close {
+          margin-left: 1rem;
+          text-decoration: none;
+          color: var(--font-color-lighter);
+        }
+      }
+    }
+  }
 }

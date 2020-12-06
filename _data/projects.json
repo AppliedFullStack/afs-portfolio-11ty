@@ -6,18 +6,15 @@
     "url": "https://example.com/portfolio/",
     "time": "Dec 2020",
     "description": "Amet sunt non enim proident sit esse consequat cillum aliqua incididunt dolor id. Cupidatat ad laboris ex esse ullamco adipisicing qui magna labore. Exercitation ad exercitation eu excepteur mollit excepteur.",
-    "tags": ["HTML", "CSS", "JS"],
-    "layers": 4 
+    "tags": ["HTML", "CSS", "JS"]
   },
   {
     "id": "2",
     "title": "Projekt Manager",
     "organization": "Personal Project",
-    "url": "https://example.com/portfolio/",
     "time": "Dec 2020",
     "description": "Amet sunt non enim proident sit esse consequat cillum aliqua incididunt dolor id. Cupidatat ad laboris ex esse ullamco adipisicing qui magna labore. Exercitation ad exercitation eu excepteur mollit excepteur.",
-    "tags": ["HTML", "CSS", "JS", "React"],
-    "layers": 4 
+    "tags": ["HTML", "CSS", "JS", "React"]
   },
   {
     "id": "3",
@@ -26,8 +23,7 @@
     "url": "https://example.com/portfolio/",
     "time": "Dec 2020",
     "description": "Amet sunt non enim proident sit esse consequat cillum aliqua incididunt dolor id. Cupidatat ad laboris ex esse ullamco adipisicing qui magna labore. Exercitation ad exercitation eu excepteur mollit excepteur.",
-    "tags": ["JS", "React", "CSS"],
-    "layers": 4 
+    "tags": ["JS", "React", "CSS"]
   },
   {
     "id": "4",
@@ -36,8 +32,7 @@
     "url": "https://example.com/portfolio/",
     "time": "Dec 2020",
     "description": "Amet sunt non enim proident sit esse consequat cillum aliqua incididunt dolor id. Cupidatat ad laboris ex esse ullamco adipisicing qui magna labore. Exercitation ad exercitation eu excepteur mollit excepteur.",
-    "tags": ["JS"],
-    "layers": 4 
+    "tags": ["JS"]
   },
   {
     "id": "5",
@@ -46,8 +41,7 @@
     "url": "https://example.com/portfolio/",
     "time": "Dec 2020",
     "description": "Amet sunt non enim proident sit esse consequat cillum aliqua incididunt dolor id. Cupidatat ad laboris ex esse ullamco adipisicing qui magna labore. Exercitation ad exercitation eu excepteur mollit excepteur.",
-    "tags": ["HTML", "CSS", "JS"],
-    "layers": 4 
+    "tags": ["HTML", "CSS", "JS"]
   },
   {
     "id": "6",
@@ -56,7 +50,6 @@
     "url": "https://example.com/portfolio/",
     "time": "Dec 2020",
     "description": "Amet sunt non enim proident sit esse consequat cillum aliqua incididunt dolor id. Cupidatat ad laboris ex esse ullamco adipisicing qui magna labore. Exercitation ad exercitation eu excepteur mollit excepteur.",
-    "tags": ["HTML"],
-    "layers": 4 
+    "tags": ["HTML"]
   }
 ]

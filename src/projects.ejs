@@ -23,9 +23,33 @@ page:
     <article
       class="project"
       data-tags="<%- project.tags.join(' ') -%>"
+      data-toggle="modal"
+      data-target="#project-modal-<%- project.id -%>"
     >
       <img src="/images/projects/<%- project.id -%>.jpg" alt="<%- project.title -%>">
       <h3><%- project.title %></h3>
     </article>
+
+    <div
+      class="modal"
+      id="project-modal-<%- project.id -%>"
+    >
+      <div class="modal-content">
+        <a href="#" class="modal-close" data-dismiss="modal">×</a>
+        <h2><%- project.title %></h2>
+        <div class="meta">
+          <span class="time"><%- project.time %></span>  
+          <span class="organization"><%- project.organization %></span>  
+        </div>
+        <img src="/images/projects/<%- project.id -%>.jpg" alt="<%- project.title -%>">
+        <p><%- project.description %></p>
+        <% if (project.url) { %>
+          <div class="modal-actions">
+            <a href="<%- project.url -%>" class="btn btn-primary btn-sm" target="_blank">View</a>
+            <a href="#" class="modal--close" data-dismiss="modal">close</a>
+          </div>
+        <% } %>
+      </div>
+    </div>
   <% } %>
 </section>
