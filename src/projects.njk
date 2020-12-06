@@ -1,0 +1,52 @@
+---
+page:
+  title: Projects
+  headerTitle: Projects
+  headerSubtitle: Looking forward to working on the next challenge!
+---
+
+<section class="filters" data-target=".projects .project">
+  <a href="#" data-filter="">All</a>
+
+  {% set allFilters = projects | uniqueProjectTags %}
+  
+  {% for filter in allFilters %}
+    <a href="#" data-filter="{{- filter -}}">{{- filter -}}</a>
+  {% endfor %}
+</section>
+
+<section class="projects clearfix">
+  {% for project in projects %}
+    <article
+      class="project"
+      data-tags="{{- project.tags.join(' ') -}}"
+      data-toggle="modal"
+      data-target="#project-modal-{{- project.id -}}"
+    >
+      <img src="/images/projects/{{- project.id -}}.jpg" alt="{{- project.title -}}">
+      <h3>{{- project.title -}}</h3>
+    </article>
+
+    <div
+      class="modal"
+      id="project-modal-{{- project.id -}}"
+    >
+      <div class="modal-content">
+        <a href="#" class="modal-close" data-dismiss="modal">×</a>
+        <h2>{{- project.title -}}</h2>
+        <div class="meta">
+          <span class="time">{{- project.time -}}</span>  
+          <span class="organization">{{- project.organization -}}</span>  
+        </div>
+        <img src="/images/projects/{{- project.id -}}.jpg" alt="{{- project.title -}}">
+        <p>{{- project.description -}}</p>
+        {% if project.url %}
+          <div class="modal-actions">
+            <a href="{{- project.url -}}" class="btn btn-primary btn-sm" target="_blank">View</a>
+            <a href="#" class="modal--close" data-dismiss="modal">close</a>
+          </div>
+        {% endif%}
+      </div>
+    </div>
+  {% endfor %}
+</section>

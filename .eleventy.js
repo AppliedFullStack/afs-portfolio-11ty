@@ -1,5 +1,6 @@
 require('dotenv').config()
 const pluginSass = require("eleventy-plugin-sass");
+const { minify } = require("terser");
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.setDataDeepMerge(true);
@@ -12,6 +13,31 @@ module.exports = (eleventyConfig) => {
       sourcemaps: true
     }
   );
+
+  eleventyConfig.addNunjucksAsyncFilter("jsmin", async function(code, callback) {
+    try {
+      const minified = await minify(code);
+      callback(null, minified.code);
+    } catch (err) {
+      console.error("Terser error: ", err);
+      // Fail gracefully.
+      callback(null, code);
+    }
+  });
+
+  eleventyConfig.addNunjucksAsyncFilter("uniqueProjectTags", async function(projectsDataObject, callback) {
+    try {
+      let allFilters = projectsDataObject.map((project) => project.tags).flat();
+      // Remove Duplicates
+      allFilters = allFilters.filter((filter, index) => allFilters.indexOf(filter) === index);
+
+      callback(null, allFilters);
+    } catch (err) {
+      console.error("Projects filtering error: ", err);
+      // Fail gracefully.
+      callback(null, code);
+    }
+  });
 
   return {
     dir: {

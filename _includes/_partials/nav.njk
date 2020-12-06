@@ -1,0 +1,19 @@
+<nav>
+  <i class="nav-toggler"></i>
+  <ul>
+    {% for menuItem in menu %}
+      {% set itemText = menuItem.text %}
+      {% set itemPath = menuItem.path %}
+      {% set itemClassName = 'active' if (page.url === itemPath) else '' %}
+      <li class="{{- itemClassName -}}">
+        <a href="{{- itemPath -}}">{{- itemText -}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a href="/" class="brand">
+    <span class="logo">J</span>
+    <strong>John</strong>
+    Doe
+  </a>
+</nav>

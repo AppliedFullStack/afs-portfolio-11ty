@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include('./_partials/head.njk') %}
+  <body>
+    {% set pageId = page.url.split('/')[1] if page.url.split('/')[1] else 'about' %}
+    {% set pageId = "page-" + pageId %}
+    <main id="{{- pageId -}}">
+      <ul class="color-switcher"></ul>
+      {% include('./_partials/nav.njk') %}
+
+      {% if (page.url !== '/') %}
+        <header>
+          <h1>{{- page.headerTitle -}}</h1>
+          <p>{{- page.headerSubtitle -}}</p>
+        </header>
+      {% endif %}
+
+      {{ content | safe }}
+    </main>
+    <footer>&copy; 2020 John Doe</footer>
+  </body>
+</html>

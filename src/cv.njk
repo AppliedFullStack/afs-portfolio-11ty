@@ -1,0 +1,49 @@
+---
+page:
+  title: Curriculum Vitae
+  headerTitle: Curriculum Vitae
+  headerSubtitle: 3yr experience passionate full-stack engineer hungry for growth.
+---
+
+<div class="education-and-experience clearfix">
+  <section class="education">
+    <h2>Education</h2>
+    {% for degree in educationMilestones %}
+      <article>
+        <span class="year">{{- degree.graduation -}}</span>
+        <span class="school">{{- degree.school -}}</span>
+        <h3>{{- degree.program -}}</h3>
+        <p>{{- degree.description -}}</p>
+      </article>
+    {% endfor %}
+  </section>
+
+  <section class="experience">
+    <h2>Experience</h2>
+    {% for job in workExperiences %}
+      <article>
+        <span class="duration">{{- job.duration -}}</span>
+        <span class="company">{{- job.company -}}</span>
+        <h3>{{- job.role -}}</h3>
+        <p>{{- job.description -}}</p>
+      </article>
+    {% endfor %}
+  </section>
+</div>
+
+<section class="skills clearfix">
+  {% for categoryName, categorySkills in skills %}
+    <div class="skill-category">
+      <h3>{{- categoryName -}}</h3>
+      {% for skill, score in categorySkills  %}
+        <div class="skill">
+          <p>{{- skill -}}</p>
+          <div
+            class="progress"
+            data-value="{{- score * 10 -}}"
+          ></div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</section>

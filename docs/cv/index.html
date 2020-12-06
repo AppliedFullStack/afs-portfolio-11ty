@@ -5,50 +5,62 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Curriculum Vitae :: John Doe | Full Stack Developer</title>
+  <title>
+    
+      Curriculum Vitae :: John Doe | Full Stack Developer
+    
+  </title>
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-    crossorigin="anonymous"
-  />
+    crossorigin="anonymous" />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet" />
   <link href="/css/app.css" rel="stylesheet" />
-  <script src="/js/color-switcher.js"></script>
-  <script src="/js/nav-toggler.js"></script>
-  <script src="/js/progress-bar.js"></script>
-  <script src="/js/projects-filter.js"></script>
-  <script src="/js/modal.js"></script>
+
+  
+
+  <script>(()=>{const t={handleColorSelection:function(){const t=document.querySelectorAll("ul.color-switcher li");for(const e of t)e.onclick=t=>{this.setThemeColor(t.currentTarget.dataset.color)}},populateColorPreferences:function(){const t=["#3498db","#1abc9c","#2ecc71","#9b59b6","#e74c3c","#e67e22","#f1c40f"],e=document.querySelector("ul.color-switcher");for(const s of t){const t=document.createElement("li");t.dataset.color=s,t.style.background=t.dataset.color,e.appendChild(t)}},setTheFirstColor:function(){const t=document.querySelector("ul.color-switcher li").dataset.color;this.setThemeColor(t)},setThemeColor:function(t){document.documentElement.style.setProperty("--primary-color",t);const e=document.querySelectorAll("ul.color-switcher li");for(const s of e)s.dataset.color===t?s.classList.add("active"):s.classList.remove("active")},init:function(){this.populateColorPreferences(),this.setTheFirstColor(),this.handleColorSelection()}};document.addEventListener("DOMContentLoaded",(()=>{t.init.bind(t)()}))})(),(()=>{const t={isOpen:!1,handleTogglerClick:function(){this.toggler.onclick=t=>{this.toggler.style.visibility="hidden",this.isOpen?this.navMenu.classList.remove("open"):this.navMenu.classList.add("open"),setTimeout((()=>{this.isOpen=!this.isOpen,this.isOpen?this.setClosingTransitionDelays():this.setOpeningTransitionDelays(),this.updateTogglerText(),this.toggler.style.visibility="visible"}),1e3)}},setClosingTransitionDelays:function(){this.navMenuItems.forEach(((t,e)=>{t.style.transitionDelay=`0.${e}s`}));const t=document.querySelectorAll("nav ul li").length;this.navMenu.style.transitionDelay=`0.${t+2}s`},setOpeningTransitionDelays:function(){this.navMenu.style.transitionDelay="0s",this.navMenuItems.forEach(((t,e)=>{t.style.transitionDelay=`0.${e+2}s`}))},setTogglerElements:function(){this.toggler=document.querySelector("nav .nav-toggler"),this.navMenu=document.querySelector("nav ul"),this.navMenuItems=document.querySelectorAll("nav ul li")},toggler:null,togglerTexts:{open:"☰",close:"✖"},updateTogglerText:function(){const t=this.isOpen?"close":"open";this.toggler.innerHTML=this.togglerTexts[t]},init:function(){this.setTogglerElements(),this.updateTogglerText(),this.setOpeningTransitionDelays(),this.handleTogglerClick()}};document.addEventListener("DOMContentLoaded",(()=>{t.init.bind(t)()}))})(),(()=>{const t={observeContainersVisibility:function(){const t=this,e=new IntersectionObserver((function(e){for(const s of e)t.setProgressBarWidths(s.target,e[0].isIntersecting)}),{threshold:[.3]}),s=document.querySelectorAll("#page-cv .skill-category");for(const t of s)e.observe(t)},populateProgressBar:function(){document.querySelectorAll(".progress[data-value]").forEach((t=>{const e=document.createElement("div");e.style.width=0,e.dataset.value=t.dataset.value,e.classList.add("progress-bar"),t.appendChild(e)}))},setProgressBarWidths(t,e){t.querySelectorAll(".progress-bar").forEach(((t,s)=>{t.style.transitionDelay=.1*(s+1)+"s",t.style.width=e?`${t.dataset.value}%`:"0"}))},init:function(){this.populateProgressBar(),this.observeContainersVisibility()}};document.addEventListener("DOMContentLoaded",(()=>{t.init.bind(t)()}))})(),(()=>{const t={fetchElements:function(t,e){this.filters=document.querySelectorAll(t),this.filterables=document.querySelectorAll(e)},handleFilterSelection:function(){for(let t of this.filters)t.onclick=e=>{e.preventDefault();const s=e.currentTarget.dataset.filter;for(let e of this.filters)t===e?e.classList.add("active"):e.classList.remove("active");for(let t of this.filterables)t.dataset.tags.includes(s)?t.classList.remove("hidden"):t.classList.add("hidden")}},selectFirstFilter:function(){this.filters[0].click()},init:function(t,e){this.fetchElements(t,e),0!==this.filters.length&&(this.handleFilterSelection(),this.selectFirstFilter())}};document.addEventListener("DOMContentLoaded",(()=>{t.init.bind(t)(".filters [data-filter]",".project[data-tags]")}))})(),(()=>{const t={handleOpenTrigger:function(){const t=document.querySelectorAll("[data-toggle='modal']");for(let e of t)e.onclick=t=>{t.preventDefault();document.querySelector(t.currentTarget.dataset.target).classList.add("modal--open")}},handleCloseTrigger:function(){const t=document.querySelectorAll("[data-dismiss='modal'");for(let e of t)e.onclick=t=>{t.preventDefault();t.currentTarget.closest(".modal").classList.remove("modal--open")}},closeOnOverlayClick:function(){document.addEventListener("click",(t=>{t.target.classList.contains("modal")?t.target.classList.remove("modal--open"):!t.target.closest(".modal").length||t.target.classList.contains("modal-content")||t.target.closest(".modal-content").length||t.target.closest(".modal").classList.remove("modal--open"),console.log(t.target);let e=t.target.classList.contains("modal");e||=t.target.closest(".modal").length&&!(t.target.classList.contains("modal-content")||t.target.closest(".modal-content").length),(t.target.classList.contains("modal")||t.target.closest(".modal").length&&t.target.closest(".modal-content").length)&&t.target.closest(".modal").classList.remove("modal--open")}))},init:function(){this.handleOpenTrigger(),this.handleCloseTrigger(),this.closeOnOverlayClick()}};document.addEventListener("DOMContentLoaded",(()=>{t.init()}))})();</script>
+
+  
   <link rel="icon" type="image/png" href="/images/favicon.png" />
 </head>
-
   <body>
+    
+    
     <main id="page-cv">
       <ul class="color-switcher"></ul>
       <nav>
   <i class="nav-toggler"></i>
   <ul>
     
-        <li class="">
-          <a href="/">About</a>
-        </li>
+      
+      
+      
+      <li class="">
+        <a href="/">About</a>
+      </li>
     
-        <li class="active">
-          <a href="/cv/">Curriculum Vitae</a>
-        </li>
+      
+      
+      
+      <li class="active">
+        <a href="/cv/">Curriculum Vitae</a>
+      </li>
     
-        <li class="">
-          <a href="/projects/">Projects</a>
-        </li>
+      
+      
+      
+      <li class="">
+        <a href="/projects/">Projects</a>
+      </li>
     
-        <li class="">
-          <a href="/contact/">Contact</a>
-        </li>
+      
+      
+      
+      <li class="">
+        <a href="/contact/">Contact</a>
+      </li>
     
   </ul>
 
