@@ -1,3 +1,4 @@
+require('dotenv').config()
 const pluginSass = require("eleventy-plugin-sass");
 
 module.exports = (eleventyConfig) => {
