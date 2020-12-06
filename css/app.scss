@@ -1,13 +1,16 @@
 @import "_utils/media";
 @import "_utils/theme";
 @import "_utils/clearfix";
+@import "_utils/grid";
 @import "_components/btn";
 @import "_components/progress";
 @import "_components/modal";
-@import "_pages/common";
+@import "_components/form";
 @import "_components/color-switcher";
 @import "_components/nav";
 @import "_components/footer";
+@import "_pages/common";
 @import "_pages/about";
 @import "_pages/cv";
 @import "_pages/projects";
+@import "_pages/contact";

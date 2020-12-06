@@ -5,8 +5,37 @@ page:
   headerSubtitle: I'm available for work!
 ---
 
-<h1>Contact</h1>
+<div class="row">
+  <div class="col contact-image-container">
+    <img src="/images/contact.jpg" alt="Contact me" />
+  </div>
+  <div class="col">
+    <form class="form">
+      <div class="form-field">
+        <input type="text" name="name" class="string" placeholder="Name" required />
+        <label>Name</label>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-field">
+            <input type="email" name="name" class="string" placeholder="Email" required />
+            <label>Email</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-field">
+            <input type="tel" name="name" class="string" placeholder="Phone" required />
+            <label>Phone</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <textarea name="message" placeholder="Message" required></textarea>
+        <label>Message</label>
+      </div>
+      <input type="submit" value="Send Message" class="btn btn-sm btn-block" />
+    </form>
+  </div>
+</div>
 
-Ref: https://blog.hubspot.com/service/best-contact-us-pages
-http://mds.is/float-label-pattern/ https://www.urbaninfluence.com/contact/
-https://www.bluleadz.com/contact-bluleadz
+

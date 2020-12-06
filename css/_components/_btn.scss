@@ -2,6 +2,7 @@
   display: inline-block;
   text-decoration: none;
   color: var(--font-color);
+  background-color: transparent;
   font-weight: bold;
   border: 1px solid var(--primary-color);
   box-sizing: border-box;
@@ -27,4 +28,8 @@
 
 .btn-sm {
   padding: 1rem 1.6rem;
+}
+
+.btn-block {
+  width: 100%;
 }

@@ -1,0 +1,22 @@
+$gutter-width: 1.5rem;
+
+.row {
+  position: relative;
+  margin: 0 (0 - $gutter-width / 2);
+  box-sizing: border-box;
+
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+
+  .col {
+    box-sizing: border-box;
+    padding: $gutter-width / 2;
+    width: 50%;
+    // margin-left: $gutter-width;
+    // display: inline-block;
+    float: left;
+  }
+}

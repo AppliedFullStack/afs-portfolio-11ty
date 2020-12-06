@@ -1,0 +1,59 @@
+form.form {
+  .form-field {
+    position: relative;
+    margin: 1.5rem 0;
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: var(--font-color-lighter);
+      z-index: 0;
+      transition: all 0.2s ease-in-out;
+    }
+
+    input.string,
+    textarea {
+      position: relative;
+      border: none;
+      border-bottom: 1px solid var(--font-color-lighter);
+      background-color: transparent;
+      width: 100%;
+      z-index: 1;
+
+      &:focus,
+      &:invalid {
+        outline: none;
+        box-shadow: none;
+      }
+
+      &:valid {
+        background-color: var(--bg-color);
+      }
+
+      &::placeholder {
+        color: transparent;
+      }
+
+      &:focus + label,
+      &:valid + label,
+      &:invalid:not(:placeholder-shown) + label {
+        top: -1.8rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      &:invalid:not(:placeholder-shown) {
+        border-bottom-color: var(--danger-color);
+      }
+
+      &:focus + label {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  input[type="submit"] {
+    margin-top: 1.5rem;
+  }
+}
