@@ -14,9 +14,10 @@ $gutter-width: 1.5rem;
   .col {
     box-sizing: border-box;
     padding: $gutter-width / 2;
-    width: 50%;
-    // margin-left: $gutter-width;
-    // display: inline-block;
-    float: left;
+
+    @include desktop {
+      width: 50%;
+      float: left;
+    }
   }
 }
