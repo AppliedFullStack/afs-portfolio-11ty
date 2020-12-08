@@ -7,6 +7,8 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPassthroughCopy('js');
   eleventyConfig.addPassthroughCopy('images');
+  eleventyConfig.addPassthroughCopy('CNAME');
+
   eleventyConfig.addPlugin(
     pluginSass,
     {
